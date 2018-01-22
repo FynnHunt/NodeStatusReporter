@@ -16,3 +16,7 @@ javac NodeStatusReporter.java
 To run the program with the given nodes.txt file:
 
 java NodeStatusReporter nodes.txt
+
+Otherwise use
+
+java NodeStatusReporter 'filename.txt'
