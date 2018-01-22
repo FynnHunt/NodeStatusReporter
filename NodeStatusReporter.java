@@ -1,3 +1,8 @@
+/*
+ * NodeStatusReporter reads file input for node messages 
+ * and outputs each nodes last known status.
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -42,8 +47,9 @@ public class NodeStatusReporter {
 			 * each node.
 			 */
 			String status = " ALIVE ";
-			//Checking whether this message was sent within 50ms of previous message and
-			//whether the notifications counter each other. If so setting status to UNKNOWN
+			/* Checking whether this message was sent within 50ms of previous message and
+			 * whether the notifications counter each other. If so setting status to UNKNOWN
+			 */
 			if (msg.getNode1().equals(prevNode2)) {
 				if ((prevNotification.equals("LOST")) && (msg.getNotification().equals("HELLO"))) {
 					if ((msg.getSentTime() - prevSent) < 50) {
@@ -111,7 +117,10 @@ public class NodeStatusReporter {
 								msg.getNotification() + " " + msg.getNode2());
 				}
 			}
-			
+			/*
+			 * Setting required current message data to previous data variables
+			 * to compare with next message
+			 */
 			prevSent = msg.getSentTime();
 			prevNode1 = msg.getNode1();
 			prevNode2 = msg.getNode2();

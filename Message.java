@@ -1,3 +1,7 @@
+/*
+ * Message class holds message lines read from input file.
+ */
+
 
 public class Message implements Comparable<Message> {
 	
