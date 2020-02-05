@@ -1,5 +1,5 @@
 # NodeStatusReporter
-Node Status Reporter C++
+Node Status Reporter
 
 Testing: 
 
